@@ -1,13 +1,12 @@
-import { Course } from "../types/course";
+const coursesData: Course[] = [
+  {
+    id: '1',
+    title: 'React Basics',
+    description: 'Learn the fundamentals of React.',
+    lessons: []
+  }
+];
 
-const BASE_URL ='http://localhost:4000';
-
-export const getCourse = async ():Promise<course[]> => {
-    const response = await fetch(`${BASE_URL}/courses`);
-    return await response.json();
-};
-
-export const getCourseById = async (id: string): Promise<Course |undefined> => {
-    const response = await fetch(`${BASE_URL}/courses/${id}`);
-    return await response.json();
+export const getCourses = async (): Promise<Course[]> => {
+  return Promise.resolve(coursesData);
 };

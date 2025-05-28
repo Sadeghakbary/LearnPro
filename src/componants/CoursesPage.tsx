@@ -5,8 +5,11 @@ import { loadCourses } from '../redux/slices/courseSlice';
 const CoursesPage = () => {
   const dispatch = useAppDispatch();
   const { list, loading, error } = useAppSelector(state => state.course);
-
+  console.log('course' , list);
+  
   useEffect(() => {
+    console.log('shod');
+    
     dispatch(loadCourses());
   }, []);
 

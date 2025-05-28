@@ -1,1 +1,23 @@
-{}
+{
+  "courses": [
+    {
+      "id": "1",
+      "title": "آموزش ری‌اکت",
+      "description": "مقدماتی تا پیشرفته",
+      "lessons": [
+        {
+          "id": "l1",
+          "title": "مقدمه",
+          "videoUrl": "https://example.com/video1.mp4",
+          "content": "خوش آمدید به ری‌اکت"
+        },
+        {
+          "id": "l2",
+          "title": "JSX چیست؟",
+          "videoUrl": "https://example.com/video2.mp4",
+          "content": "مفهوم JSX در ری‌اکت"
+        }
+      ]
+    }
+  ]
+}
