@@ -1,14 +1,14 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import CoursesPage from "./pages/CoursePage";
-
+import { ThemeProvider } from "@emotion/react";
+import { CssBaseline } from "@mui/material";
+import { RTLComponent } from "./theme";
+import mainRoutes from "./routes/mainRoutes";
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Courses" element={<CoursesPage/>}/>
-      </Routes>
-    </BrowserRouter>
+    <RTLComponent>
+      <ThemeProvider theme={themeMode === "light" ? lightTheme : darkTheme}>
+        <CssBaseline />
+        <mainRoutes />
+      </ThemeProvider>
+    </RTLComponent>
   );
 }

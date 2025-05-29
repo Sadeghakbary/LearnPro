@@ -1,5 +1,5 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { Course } from '../../types/course';
+import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
+import type { Course } from '../../types/course';
 import { getCourses } from '../../services/courseService';
 
 export const loadCourses = createAsyncThunk('course/load', async () => {

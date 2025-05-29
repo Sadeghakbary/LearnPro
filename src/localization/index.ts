@@ -1,48 +1,49 @@
-import enDictionary from "./en";
-import faDictionary from "./fa";
-
+import EN_US from './en'
+import FA_IR from './fa'
 
 const lang: string | null =
-  localStorage.getItem("lang") !== null ? localStorage.getItem("lang") : "en";
-export { lang };
+  localStorage.getItem('lang') !== null ? localStorage.getItem('lang') : 'en'
+export { lang }
 
-const direction :{
-    fa : 'rtl'
-    en : 'ltr'
-    } = {
-        fa: 'rtl',
-        en: 'ltr',
+const directions: {
+  fa: 'rtl'
+  en: 'ltr'
+} = {
+  fa: 'rtl',
+  en: 'ltr',
 }
 
-const direction : 'rtl' | 'ltr' = direction[lang as keyof typeof direction];
-export { direction };
+const direction: 'rtl' | 'ltr' = directions[lang as keyof typeof directions]
+export { direction }
 
-const font : {
-    fa:string
-    en:string
-} ={
-    fa: 'IRANSans',
-    en: 'Arial'
-}
-function getFont() {
-    return font[lang as keyof typeof font];
-}
-export { getFont };
-
-const teransLates={
-    en : enDictionary ,
-    fa : faDictionary ,
+const font: {
+  fa: string
+  en: string
+} = {
+  fa: 'IRANSans',
+  en: 'Poppins',
 }
 
-const teransLates = teransLates[lang as keyof typeof teransLates];
-export { teransLates };
-
-function change_lang() {
-    if (lang == 'en') {
-        localStorage.setItem('lang' , 'fa');
-    }else{
-        localStorage.setItem('lang' , 'en');
-    }
-    window.location.reload()
+function getFonts() {
+  return font[lang as keyof typeof font]
 }
-export { change_lang };
+export { getFonts }
+
+const translates = {
+  en: EN_US,
+  fa: FA_IR,
+}
+
+const translate = translates[lang as keyof typeof translates]
+
+export { translate }
+
+function changeLanguage() {
+  if (lang === 'en') {
+    localStorage.setItem('lang', 'fa')
+  } else {
+    localStorage.setItem('lang', 'en')
+  }
+  window.location.reload()
+}
+export { changeLanguage }
