@@ -1,9 +1,9 @@
 
-export default function HomePage() {
+export default function settingPage() {
   return (
     <div>
       <h1>
-        Home Page
+        settingPage
       </h1>
     </div>
   )

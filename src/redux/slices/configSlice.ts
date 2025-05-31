@@ -8,7 +8,7 @@ interface ConfigState {
 const savedTheme = localStorage.getItem('themeMode') as 'light' | 'dark' | null
 
 const initialState: ConfigState = {
-  themeMode: savedTheme || 'light'
+  themeMode: savedTheme || 'light',
 }
 
 const configSlice = createSlice({
