@@ -1,14 +1,14 @@
 
 import { configureStore } from '@reduxjs/toolkit'
 import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
-import configReducer from './slices/configSlice'
-
+import configReducer from './slices/themeSlice'
+import themeReducer from "./slices/themeSlice";
 
 
 export const store = configureStore({
   reducer: {
     appConfigs: configReducer,
-   
+     theme: themeReducer,
    
   },
 })

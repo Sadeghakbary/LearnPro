@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import ResponsiveAppBar from '@/pages/mainlayout/navbar'
+import ResponsiveAppBar from '@/pages/layout/Navbar/ResponsiveAppBar'
 import HomePage from '@/pages/HomePage'
 import CoursesPage from '@/pages/CoursePage'
 import SettingsPage from  '@/pages/settingPage'

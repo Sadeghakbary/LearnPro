@@ -1,8 +1,20 @@
+
 const en = {
   common: {
     app_name: 'LearnPro',
     change_lang: 'Change Language',
     theme_toggle: 'Toggle Theme',
+  },
+  navbar: {
+    pages:[
+      {Title: 'Home' , path: '/'},
+      {Title: 'Courses' , path: '/Courses'},
+      {Title: 'Blogs' , path: '/blogs'},
+    ],
+    settings: [
+      {title: 'Settings' , path: '/settings'},
+      {title: 'Profile' , path: '/profile'},
+    ],
   },
   menu: {
     home: 'Home',
@@ -43,6 +55,9 @@ const en = {
     retry: 'Retry',
     select_language: 'Select Language',
   },
-};
+  Language: {
+    changeLanguage: 'change Language',
+  },
+}
 
-export default en;
+export default en
