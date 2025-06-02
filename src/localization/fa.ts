@@ -7,7 +7,6 @@ const fa = {
   },
      navbar: {
     pages:[
-      {Title: 'خانه' , path: '/'},
       {Title: 'دوره ها' , path: '/Courses'},
       {Title: 'مقاله ها' , path: '/blogs'},
     ],

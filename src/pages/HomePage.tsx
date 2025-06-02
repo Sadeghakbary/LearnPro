@@ -1,10 +1,12 @@
+import { Typography } from '@mui/material'
 
 export default function HomePage() {
   return (
-    <div>
-      <h1>
-        Home Page
-      </h1>
+    <div style={{ padding: '50px' }}>
+      <Typography variant="h4" color="primary">
+        salam
+      </Typography>
     </div>
   )
 }
+

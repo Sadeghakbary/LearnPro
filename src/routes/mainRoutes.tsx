@@ -1,13 +1,12 @@
-import { Routes, Route } from 'react-router-dom'
-import ResponsiveAppBar from '@/pages/layout/Navbar/ResponsiveAppBar'
-import HomePage from '@/pages/HomePage'
 import CoursesPage from '@/pages/CoursePage'
-import SettingsPage from  '@/pages/settingPage'
+import HomePage from '@/pages/HomePage'
+import SettingsPage from '@/pages/settingPage'
+import { Route, Routes } from 'react-router-dom'
 
 export default function MainRoutes() {
   return (
     <Routes>
-      <Route element={<ResponsiveAppBar />}>
+      <Route>
         <Route path="/" element={<HomePage />} />
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/settings" element={<SettingsPage />} />

@@ -7,7 +7,6 @@ const en = {
   },
   navbar: {
     pages:[
-      {Title: 'Home' , path: '/'},
       {Title: 'Courses' , path: '/Courses'},
       {Title: 'Blogs' , path: '/blogs'},
     ],

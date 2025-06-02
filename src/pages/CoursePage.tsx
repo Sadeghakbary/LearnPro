@@ -1,8 +1,9 @@
+import { Typography } from "@mui/material";
 
 export default function CoursePage() {
   return (
-    <h1>
-      CoursePage
-    </h1>
+  <>
+   <Typography style={{marginTop:'250px'}}>salam</Typography>
+  </>
   )
 }

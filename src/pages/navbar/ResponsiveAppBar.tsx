@@ -5,6 +5,8 @@ import DesktopMenu from './DesktopMenu'
 import Logo from './Logo'
 import MobileMenu from './PhoneMenue'
 import UserMenu from './UserMenu'
+import ChangeTheme from './thme'
+import ChangeLang from './LanguageBtn'
 
 export default function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
@@ -36,6 +38,8 @@ export default function ResponsiveAppBar() {
           />
           <Logo />
           <DesktopMenu pages={pages} handleCloseNavMenu={handleCloseNavMenu} />
+          <ChangeTheme/>
+          <ChangeLang/>
           <UserMenu
             settings={settings}
             anchorElUser={anchorElUser}
