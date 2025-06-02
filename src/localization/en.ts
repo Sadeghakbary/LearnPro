@@ -15,16 +15,11 @@ const en = {
       {title: 'Profile' , path: '/profile'},
     ],
   },
-  menu: {
-    home: 'Home',
-    courses: 'Courses',
-    about: 'About Us',
-    contact: 'Contact',
-  },
+ 
   pages: {
     home: {
-      welcome: 'Welcome to LearnPro',
-      explore_courses: 'Explore Courses',
+      welcome: 'Welcome to LearnPro the only way for smart people',
+      Details : 'you can learn anyting you want as fast you can'
     },
     courses: {
       title: 'Courses List',
