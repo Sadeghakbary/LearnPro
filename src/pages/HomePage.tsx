@@ -1,8 +1,27 @@
 import { translate } from '@/localization'
-import { Box, Container, IconButton, InputBase, Typography  } from '@mui/material'
-import {SearchIcon} from '@mui/icons-material'
+import SearchIcon from '@mui/icons-material/Search'
+import { Box, Container, InputAdornment, TextField, Typography } from '@mui/material'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function HomePage() {
+    const [searchTerm, setSearchTerm] = useState('')
+  const navigate = useNavigate()
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+   const term = searchTerm.trim().toLocaleLowerCase()
+   const allRoutes = [...translate.navbar.Pages ,...translate.navbar.settings ,]
+
+   const matched = allRoutes.find((item) =>
+    item.title.toLocaleLowerCase().includes(term)
+   )
+   if(matched){
+    navigate(matched.path)
+   }else{
+    navigate('/not-found')
+   }
+  }
   return (
     <>
       <Container sx={{ mt: 8, textAlign: 'center' }}>
@@ -13,19 +32,32 @@ export default function HomePage() {
           {translate.pages.home.Details}
         </Typography>
       </Container>
-      <Box
-        display='flex'
-        justifyContent='center'
-        mt={4}
-        onSubmit={(e) => {
-          e.preventDefault()
-        }}
-      >
-        <InputBase sx={{ ml: 1, flex: 1 }} placeholder='چی میخوای یاد بگیری؟' />
-        <IconButton type='submit' sx={{ p: '10px' }} aria-label='search'>
-          <SearchIcon />
-        </IconButton>
-      </Box>
+      <Container maxWidth='sm'>
+        <Box
+          component='form'
+          onSubmit={handleSubmit}
+          sx={{
+            mt: 12,
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <TextField
+            fullWidth
+            placeholder = {translate.pages.home.Search}
+            variant='outlined'
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position='start'>
+                  <SearchIcon color='action' />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </Box>
+      </Container>
     </>
   )
 }

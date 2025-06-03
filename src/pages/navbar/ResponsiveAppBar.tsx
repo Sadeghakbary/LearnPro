@@ -12,7 +12,7 @@ export default function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null)
 
-  const pages = translate.navbar.pages
+  const pages = translate.navbar.Pages
   const settings = translate.navbar.settings
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {

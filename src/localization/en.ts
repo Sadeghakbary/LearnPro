@@ -6,9 +6,9 @@ const en = {
     theme_toggle: 'Toggle Theme',
   },
   navbar: {
-    pages:[
-      {Title: 'Courses' , path: '/Courses'},
-      {Title: 'Blogs' , path: '/blogs'},
+    Pages:[
+      {title: 'Courses' , path: '/Courses'},
+      {title: 'Blogs' , path: '/blogs'},
     ],
     settings: [
       {title: 'Settings' , path: '/settings'},
@@ -19,7 +19,8 @@ const en = {
   pages: {
     home: {
       welcome: 'Welcome to LearnPro the only way for smart people',
-      Details : 'you can learn anyting you want as fast you can'
+      Details : 'you can learn anyting you want as fast you can',
+      Search : 'What are you looking for ?  ',
     },
     courses: {
       title: 'Courses List',

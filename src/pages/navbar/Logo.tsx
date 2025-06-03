@@ -5,7 +5,7 @@ import { translate } from '@/localization'
 export default function Logo() {
   return (
     <>
-      {/* دسکتاپ */}
+      
       <Box
         component='img'
         src={logo}
@@ -36,7 +36,7 @@ export default function Logo() {
         {translate.common.app_name}
       </Typography>
 
-      {/* موبایل */}
+      
       <Box
         component='img'
         src={logo}

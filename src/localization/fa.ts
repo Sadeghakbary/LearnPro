@@ -6,9 +6,9 @@ const fa = {
   
   },
      navbar: {
-    pages:[
-      {Title: 'دوره ها' , path: '/Courses'},
-      {Title: 'مقاله ها' , path: '/blogs'},
+    Pages:[
+      {title: 'دوره ها' , path: '/Courses'},
+      {title: 'مقاله ها' , path: '/blogs'},
     ],
     settings: [
       {title: 'تنظیمات' , path: '/settings'},
@@ -18,7 +18,8 @@ const fa = {
   pages: {
     home: {
       welcome: ' به لرن‌پرو خوش آمدید تنها راه افراد هوشمند',
-       Details : 'تو میتونی هر چیزی که لازم داری رو در سریع ترین زمان ممکن یادبگیری'
+       Details : 'تو میتونی هر چیزی که لازم داری رو در سریع ترین زمان ممکن یادبگیری' ,
+       Search : 'چه دوره ای نیاز داری ؟'
     },
     courses: {
       title: 'لیست دوره‌ها',
