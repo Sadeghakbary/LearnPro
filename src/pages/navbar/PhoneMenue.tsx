@@ -3,7 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from 'react-router-dom'
 
 interface Props {
-  pages: { Title: string; path: string }[]
+  pages: { title: string; path: string }[]
   anchorElNav: null | HTMLElement
   handleOpenNavMenu: (event: React.MouseEvent<HTMLElement>) => void
   handleCloseNavMenu: () => void
@@ -38,7 +38,7 @@ export default function PhoneMenue({
       >
         {pages.map((page, index) => (
           <MenuItem key={index} onClick={handleCloseNavMenu} component={Link} to={page.path}>
-            <Typography textAlign='center'>{page.Title}</Typography>
+            <Typography textAlign='center'>{page.title}</Typography>
           </MenuItem>
         ))}
       </Menu>
