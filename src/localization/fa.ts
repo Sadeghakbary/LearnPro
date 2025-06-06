@@ -15,6 +15,9 @@ const fa = {
       {title: 'پروفایل' , path: '/profile'},
     ],
   },
+   cardBox: {
+    Courses : 'دوره ها'
+  },
   pages: {
     home: {
       welcome: ' به لرن‌پرو خوش آمدید تنها راه افراد هوشمند',
