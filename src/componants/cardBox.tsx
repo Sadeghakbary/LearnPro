@@ -1,127 +1,86 @@
-import { useEffect, useRef, useState } from 'react'
-import { Box, Typography, IconButton } from '@mui/material'
-import { ChevronLeft, ChevronRight } from '@mui/icons-material'
-import Card from '@mui/material/Card'
-import CardMedia from '@mui/material/CardMedia'
-import CardContent from '@mui/material/CardContent'
 import { translate } from '@/localization'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
+import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
+import { useRef } from 'react'
 
-export default function CardBox() {
+export default function cardBox() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const scrollRef = useRef<HTMLDivElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [visibleCards, setVisibleCards] = useState(1)
-  const [isRTL, setIsRTL] = useState(false)
-
-  const cardWidth = 300
-  const cardGap = 16
-
-  // تشخیص جهت صفحه (RTL یا LTR)
-  useEffect(() => {
-    const dir =
-      document.documentElement.getAttribute('dir') || document.body.getAttribute('dir') || 'ltr'
-    setIsRTL(dir.toLowerCase() === 'rtl')
-  }, [])
-
-  // تعیین تعداد کارت‌های قابل نمایش داینامیک
-  useEffect(() => {
-    const handleResize = () => {
-      if (!containerRef.current) return
-      const containerWidth = containerRef.current.offsetWidth
-      const cardsThatFit = Math.floor(containerWidth / (cardWidth + cardGap))
-      setVisibleCards(cardsThatFit || 1)
+  const scrollAmount = 260
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
     }
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  // اسکرول دستی
-  const handleScroll = (dir: 'left' | 'right') => {
-    if (!scrollRef.current) return
-    const offset = (cardWidth + cardGap) * visibleCards
-    const scrollDir = isRTL
-      ? dir === 'left'
-        ? offset
-        : -offset
-      : dir === 'left'
-        ? -offset
-        : offset
-    scrollRef.current.scrollBy({ left: scrollDir, behavior: 'smooth' })
   }
-
-  // اسکرول خودکار هر ۴ ثانیه
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!scrollRef.current) return
-      const container = scrollRef.current
-      const scrollAmount = (cardWidth + cardGap) * visibleCards
-      const maxScroll = container.scrollWidth - container.clientWidth
-
-      // مقدار اسکرول فعلی با توجه به جهت صفحه
-      const currentScroll = isRTL ? maxScroll - container.scrollLeft : container.scrollLeft
-
-      if (currentScroll + scrollAmount >= maxScroll) {
-        // برگشت به ابتدا (ابتدای ریل در RTL و LTR فرق داره)
-        container.scrollTo({ left: isRTL ? maxScroll : 0, behavior: 'smooth' })
-      } else {
-        // اسکرول به جلو یا عقب
-        container.scrollBy({
-          left: isRTL ? -scrollAmount : scrollAmount,
-          behavior: 'smooth',
-        })
-      }
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [visibleCards, isRTL])
-
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+    }
+  }
   return (
-    <>
-      <Typography sx={{ mt: 8, ml: 5, fontWeight: 'bold', fontSize: '1.5rem' }}>
+    <Box sx={{ position: 'relative', width: '100%', padding: 2 }}>
+      <Typography variant='h6' mb={4} sx={{ color: 'text.secondary' }}>
         {translate.cardBox.Courses}
       </Typography>
-
-      <Box
-        ref={containerRef}
+      <IconButton
+        onClick={scrollLeft}
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          overflow: 'hidden',
-          mt: 2,
-          px: 2,
-          gap: 1,
-          direction: isRTL ? 'rtl' : 'ltr', // مهم برای RTL
+          position: 'absolute',
+          top: '50%',
+          left: 8,
+          transform: 'translateY(-50%)',
+          zIndex: 10,
         }}
+        aria-label='Scroll Left'
       >
-        {/* دکمه چپ */}
-        <IconButton onClick={() => handleScroll('left')} aria-label='scroll left'>
-          <ChevronLeft />
-        </IconButton>
-
-        {/* ریل کارت‌ها */}
+        <ChevronLeftIcon />
+      </IconButton>
+      <IconButton
+        onClick={scrollRight}
+        sx={{
+          position: 'absolute',
+          top: '50%',
+          right: 8,
+          transform: 'translateY(-50%)',
+          zIndex: 10,
+        }}
+        aria-label='Scroll Right'
+      >
+        <ChevronRightIcon />
+      </IconButton>
+      <Box sx={{ overflow: 'initial' }}>
         <Box
           ref={scrollRef}
           sx={{
             display: 'flex',
+            gap: 2,
+            paddingX: 1,
             overflowX: 'auto',
             scrollBehavior: 'smooth',
-            gap: `${cardGap}px`,
-            scrollbarWidth: 'none',
             '&::-webkit-scrollbar': { display: 'none' },
-            flex: 1,
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
           }}
         >
           {translate.cardBox.cardData.map((card) => (
             <Card
               key={card.id}
               sx={{
-                minWidth: `${cardWidth}px`,
-                flex: '0 0 auto',
+                maxWidth: 350,
+                minHeight: 300,
+                flexShrink: 0,
+                boxShadow: 3,
+                borderRadius: 2,
+                cursor: 'pointer',
+                '&:hover': { transform: 'scale(1.05)', boxShadow: 20, transition: 'all 0.3s ease' },
               }}
             >
-              <CardMedia component='img' height='140' image={card.img} alt={card.title} />
+              <Box sx={{ borderBottomLeftRadius:10, borderBottomRightRadius:10, overflow: 'hidden' }}>
+                <CardMedia component='img' height='140' image={card.img} alt={card.title} />
+              </Box>
               <CardContent>
-                <Typography gutterBottom variant='h6'>
+                <Typography variant='subtitle1' fontWeight='bold'>
                   {card.title}
                 </Typography>
                 <Typography variant='body2' color='text.secondary'>
@@ -131,12 +90,7 @@ export default function CardBox() {
             </Card>
           ))}
         </Box>
-
-        {/* دکمه راست */}
-        <IconButton onClick={() => handleScroll('right')} aria-label='scroll right'>
-          <ChevronRight />
-        </IconButton>
       </Box>
-    </>
+    </Box>
   )
 }

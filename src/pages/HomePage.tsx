@@ -1,10 +1,9 @@
+import backImage from '@/assets/images/background/Grey Laptop Promo Poster.png'
 import { translate } from '@/localization'
 import SearchIcon from '@mui/icons-material/Search'
 import { Box, InputAdornment, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import backImage from '@/assets/images/background/Grey Laptop Promo Poster.png'
-import CardBox from '@/componants/cardBox'
 
 export default function HomePage() {
   const [searchTerm, setSearchTerm] = useState('')
