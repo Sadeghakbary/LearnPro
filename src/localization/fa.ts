@@ -1,3 +1,4 @@
+
 const fa = {
   common: {
     app_name: 'لرن‌پرو',
@@ -55,7 +56,25 @@ const fa = {
       },
     ],
   },
-
+  roadMap: {
+    title: 'نقشه راه تو',
+    steps: [
+      {
+        title: 'HTML & CSS',
+        description: 'شروع یادگیری طراحی وب',
+      },
+      {
+        title: 'JavaScript',
+        description: 'منطق برنامه‌نویسی  و ساختاردهی',
+      },
+      { title: 'React',
+        description: 'بنیاد‌های و ساخت اپلیکیشن SPA' 
+      },
+      { title: 'TypeScript',
+        description : ' کدنویسی ایمن تر و پایدار' ,
+        },
+    ],
+  },
   pages: {
     home: {
       welcome: ' به لرن‌پرو خوش آمدید تنها راه افراد هوشمند',

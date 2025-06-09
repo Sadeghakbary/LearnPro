@@ -58,7 +58,9 @@ const en = {
       },
     ],
   },
-
+  roadMap : {
+    title :' your Roadmap',
+  } ,
   pages: {
     home: {
       welcome: 'Welcome to LearnPro the only way for smart people',

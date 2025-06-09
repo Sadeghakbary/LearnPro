@@ -1,14 +1,14 @@
 import CardBox from '@/componants/cardBox'
 import HomePage from '@/pages/HomePage'
-import { Grid2 } from '@mui/material'
+import RoadMap from '@/componants/roadMap'
 
 export default function MainPage() {
   return (
     <>
       <HomePage />
-      <Grid2 display={'flex'}>
-        <CardBox />
-      </Grid2>
+
+      <CardBox />
+      <RoadMap />
     </>
   )
 }
