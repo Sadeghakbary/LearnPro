@@ -1,4 +1,3 @@
-
 const fa = {
   common: {
     app_name: 'لرن‌پرو',
@@ -16,7 +15,7 @@ const fa = {
     ],
   },
   cardBox: {
-    Courses: 'دوره‌ها',
+    courses: 'دوره‌ها',
     cardData: [
       {
         id: 1,
@@ -60,25 +59,31 @@ const fa = {
     title: 'نقشه راه تو',
     steps: [
       {
+        id: 1,
         title: 'HTML & CSS',
         description: 'شروع یادگیری طراحی وب',
       },
       {
+        id: 2,
         title: 'JavaScript',
         description: 'منطق برنامه‌نویسی  و ساختاردهی',
       },
-      { title: 'React',
-        description: 'بنیاد‌های و ساخت اپلیکیشن SPA' 
+      {
+        id: 3,
+        title: 'React',
+        description: 'بنیاد‌های و ساخت اپلیکیشن SPA',
       },
-      { title: 'TypeScript',
-        description : ' کدنویسی ایمن تر و پایدار' ,
-        },
+      {
+        id: 4,
+        title: 'TypeScript',
+        description: ' کدنویسی ایمن تر و پایدار',
+      },
     ],
   },
   pages: {
     home: {
       welcome: ' به لرن‌پرو خوش آمدید تنها راه افراد هوشمند',
-      Details: 'تو میتونی هر چیزی که لازم داری رو در سریع ترین زمان ممکن یادبگیری',
+      details: 'تو میتونی هر چیزی که لازم داری رو در سریع ترین زمان ممکن یادبگیری',
       Search: 'چه دوره ای نیاز داری ؟',
     },
     courses: {
@@ -109,7 +114,7 @@ const fa = {
     retry: 'تلاش مجدد',
     select_language: 'انتخاب زبان',
   },
-  Language: {
+  language: {
     changeLanguage: ' تغییر زبان',
   },
 }

@@ -8,6 +8,7 @@ export default function cardBox() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const scrollRef = useRef<HTMLDivElement>(null)
   const scrollAmount = 260
+  const cardData = translate.cardBox.cardData
   const scrollLeft = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
@@ -21,7 +22,7 @@ export default function cardBox() {
   return (
     <Box sx={{ position: 'relative', width: '100%', padding: 2 }}>
       <Typography variant='h6' mb={4} sx={{ color: 'text.secondary' }}>
-        {translate.cardBox.Courses}
+        {translate.cardBox.courses}
       </Typography>
       <IconButton
         onClick={scrollLeft}
@@ -63,7 +64,7 @@ export default function cardBox() {
             msOverflowStyle: 'none',
           }}
         >
-          {translate.cardBox.cardData.map((card) => (
+          {cardData.map((card) => (
             <Card
               key={card.id}
               sx={{
