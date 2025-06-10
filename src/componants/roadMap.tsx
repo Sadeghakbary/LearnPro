@@ -3,36 +3,40 @@ import { Box, Typography, Card, CardContent } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 
 export default function RoadMap() {
-  const steps = translate.roadMap.steps
-  const lightColors = [
-    '#E3F2FD',
-    '#FFECB3',
-    '#C8E6C9',
-    '#F8BBD0',
-    '#D1C4E9',
-    '#FFF9C4',
-    '#B2EBF2',
-    '#FFCDD2',
-  ]
-  const darkColors = [
-    '#0D47A1',
-    '#FFA000',
-    '#2E7D32',
-    '#C2185B',
-    '#4527A0',
-    '#F9A825',
-    '#00796B',
-    '#B71C1C',
-  ]
   const theme = useTheme()
-  const isLight = theme.palette.mode === 'light'
-  const colors = isLight ? lightColors : darkColors
+  const steps = translate.roadMap.steps
+
+  const lightColors = [
+    '#E3F2FD', // light blue
+    '#FFECB3', // light yellow
+    '#C8E6C9', // light green
+    '#F8BBD0', // light pink
+    '#D1C4E9', // light purple
+    '#FFF9C4', // light lemon
+    '#B2EBF2', // light cyan
+    '#FFCDD2', // light red
+  ]
+
+  const darkColors = [
+    '#0D47A1', // dark blue
+    '#FFA000', // dark amber
+    '#2E7D32', // dark green
+    '#C2185B', // dark pink/red
+    '#4527A0', // dark purple
+    '#F9A825', // dark yellow
+    '#00796B', // dark teal
+    '#B71C1C', // dark red
+  ]
+
+  // انتخاب آرایه رنگ بر اساس حالت تم
+  const colors = theme.palette.mode === 'light' ? lightColors : darkColors
 
   return (
     <Box sx={{ px: 2 }}>
       <Typography variant="h6" sx={{ mb: 2 }} color="secondary">
         {translate.roadMap.title}
       </Typography>
+
       <Box
         sx={{
           display: 'flex',
@@ -43,8 +47,11 @@ export default function RoadMap() {
         }}
       >
         {steps.map((step, index) => {
+          // رنگ پس‌زمینه کارت با چرخه در آرایه رنگ‌ها
           const bgColor = colors[index % colors.length]
-          const textColor = isLight ? 'text.secondary' : '#f1f1f1'
+          // رنگ متن متناسب با رنگ پس‌زمینه (برای خوانایی)
+          const textColor = theme.palette.getContrastText(bgColor)
+
           return (
             <Card
               key={step.id}
@@ -63,9 +70,7 @@ export default function RoadMap() {
                 <Typography variant="subtitle1" fontWeight="bold">
                   {step.title}
                 </Typography>
-                <Typography variant="body2">
-                  {step.description}
-                </Typography>
+                <Typography variant="body2">{step.description}</Typography>
               </CardContent>
             </Card>
           )
