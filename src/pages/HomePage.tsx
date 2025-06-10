@@ -54,7 +54,7 @@ export default function HomePage() {
           {translate.pages.home.welcome}
         </Typography>
         <Typography variant='h6' sx={{ mb: 4 }}>
-          {translate.pages.home.Details}
+          {translate.pages.home.details}
         </Typography>
 
         <TextField

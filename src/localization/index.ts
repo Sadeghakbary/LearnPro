@@ -41,8 +41,10 @@ export { translate }
 function changeLanguage() {
   if (lang === 'en') {
     localStorage.setItem('lang', 'fa')
+    window.location.reload()
   } else {
     localStorage.setItem('lang', 'en')
+    window.location.reload()
   }
   window.location.reload()
 }

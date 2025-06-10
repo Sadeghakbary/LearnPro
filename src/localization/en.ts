@@ -16,7 +16,7 @@ const en = {
   },
 
   cardBox: {
-    Courses: 'Courses',
+    courses: 'Courses',
     cardData: [
       {
         id: 1,
@@ -58,13 +58,35 @@ const en = {
       },
     ],
   },
-  roadMap : {
-    title :' your Roadmap',
-  } ,
+  roadMap: {
+    title: 'Your Roadmap',
+    steps: [
+      {
+        id: 1,
+        title: 'HTML & CSS',
+        description: 'Start learning web design',
+      },
+      {
+        id: 2,
+        title: 'JavaScript',
+        description: 'Programming logic and structuring',
+      },
+      {
+        id: 3,
+        title: 'React',
+        description: 'Fundamentals and building SPA applications',
+      },
+      {
+        id: 4,
+        title: 'TypeScript',
+        description: 'Safer and more stable coding',
+      },
+    ],
+  },
   pages: {
     home: {
       welcome: 'Welcome to LearnPro the only way for smart people',
-      Details: 'you can learn anyting you want as fast you can',
+      details: 'you can learn anyting you want as fast you can',
       Search: 'What are you looking for ?  ',
     },
     courses: {
