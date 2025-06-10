@@ -7,36 +7,32 @@ export default function RoadMap() {
   const steps = translate.roadMap.steps
 
   const lightColors = [
-    '#E3F2FD', // light blue
-    '#FFECB3', // light yellow
-    '#C8E6C9', // light green
-    '#F8BBD0', // light pink
-    '#D1C4E9', // light purple
-    '#FFF9C4', // light lemon
-    '#B2EBF2', // light cyan
-    '#FFCDD2', // light red
+    '#E3F2FD',
+    '#FFECB3',
+    '#C8E6C9',
+    '#F8BBD0',
+    '#D1C4E9',
+    '#FFF9C4',
+    '#B2EBF2',
+    '#FFCDD2',
   ]
-
   const darkColors = [
-    '#0D47A1', // dark blue
-    '#FFA000', // dark amber
-    '#2E7D32', // dark green
-    '#C2185B', // dark pink/red
-    '#4527A0', // dark purple
-    '#F9A825', // dark yellow
-    '#00796B', // dark teal
-    '#B71C1C', // dark red
+    '#0D1B2A',
+    '#1B263B',
+    '#415A77',
+    '#778DA9',
+    '#E0E1DD',
+    '#FFFFFF',
+    '#A5B3C3',
+    '#2F3E52',
   ]
 
-  // انتخاب آرایه رنگ بر اساس حالت تم
-  const colors = theme.palette.mode === 'light' ? lightColors : darkColors
-
+  const colors = theme.palette.mode == 'light' ? lightColors ? darkColors : lightColors :darkColors
   return (
     <Box sx={{ px: 2 }}>
-      <Typography variant="h6" sx={{ mb: 2 }} color="secondary">
+      <Typography variant='h6' sx={{ mb: 2 }} color='secondary'>
         {translate.roadMap.title}
       </Typography>
-
       <Box
         sx={{
           display: 'flex',
@@ -47,9 +43,7 @@ export default function RoadMap() {
         }}
       >
         {steps.map((step, index) => {
-          // رنگ پس‌زمینه کارت با چرخه در آرایه رنگ‌ها
           const bgColor = colors[index % colors.length]
-          // رنگ متن متناسب با رنگ پس‌زمینه (برای خوانایی)
           const textColor = theme.palette.getContrastText(bgColor)
 
           return (
@@ -64,13 +58,16 @@ export default function RoadMap() {
                 color: textColor,
                 transition: 'transform 0.3s',
                 '&:hover': { transform: 'scale(1.05)' },
+                display : 'grid' ,
+                justifyContent : 'center' ,
+                
               }}
             >
               <CardContent>
-                <Typography variant="subtitle1" fontWeight="bold">
+                <Typography variant='subtitle1' fontWeight='bold'>
                   {step.title}
                 </Typography>
-                <Typography variant="body2">{step.description}</Typography>
+                <Typography variant='body2'>{step.description}</Typography>
               </CardContent>
             </Card>
           )
