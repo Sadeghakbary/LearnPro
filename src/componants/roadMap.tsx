@@ -1,10 +1,13 @@
 import { translate } from '@/localization'
 import { Box, Typography, Card, CardContent } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
+import {useAppSelector} from '@/redux/store'
+import { selectTheme } from '@/redux/slices/themeSlice'
 
 export default function RoadMap() {
   const theme = useTheme()
   const steps = translate.roadMap.steps
+  const {mode} = useAppSelector(selectTheme)
 
   const lightColors = [
     '#E3F2FD',
@@ -16,6 +19,7 @@ export default function RoadMap() {
     '#B2EBF2',
     '#FFCDD2',
   ]
+
   const darkColors = [
     '#0D1B2A',
     '#1B263B',
@@ -27,7 +31,9 @@ export default function RoadMap() {
     '#2F3E52',
   ]
 
-  const colors = theme.palette.mode == 'light' ? lightColors ? darkColors : lightColors :darkColors
+  const isLight = mode === 'light'
+  const colors = isLight ? lightColors : darkColors
+
   return (
     <Box sx={{ px: 2 }}>
       <Typography variant='h6' sx={{ mb: 2 }} color='secondary'>
@@ -48,7 +54,7 @@ export default function RoadMap() {
 
           return (
             <Card
-              key={step.id}
+              key={step.id || index}
               sx={{
                 minWidth: 200,
                 flexShrink: 0,
@@ -58,9 +64,6 @@ export default function RoadMap() {
                 color: textColor,
                 transition: 'transform 0.3s',
                 '&:hover': { transform: 'scale(1.05)' },
-                display : 'grid' ,
-                justifyContent : 'center' ,
-                
               }}
             >
               <CardContent>
