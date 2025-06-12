@@ -8,7 +8,6 @@ export default function RoadMap() {
   const theme = useTheme()
   const steps = translate.roadMap.steps
   const {mode} = useAppSelector(selectTheme)
-
   const lightColors = [
     '#E3F2FD',
     '#FFECB3',
@@ -19,7 +18,6 @@ export default function RoadMap() {
     '#B2EBF2',
     '#FFCDD2',
   ]
-
   const darkColors = [
     '#0D1B2A',
     '#1B263B',
@@ -30,10 +28,8 @@ export default function RoadMap() {
     '#A5B3C3',
     '#2F3E52',
   ]
-
   const isLight = mode === 'light'
   const colors = isLight ? lightColors : darkColors
-
   return (
     <Box sx={{ px: 2 }}>
       <Typography variant='h6' sx={{ mb: 2 }} color='secondary'>

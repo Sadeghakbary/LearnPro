@@ -1,12 +1,15 @@
 import { translate } from '@/localization'
+import CoursePage from '@/pages/coursePage'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
 import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export default function cardBox() {
+export default function CardBox() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const scrollRef = useRef<HTMLDivElement>(null)
+  const navigate = useNavigate()
   const scrollAmount = 260
   const cardData = translate.cardBox.cardData
   const scrollLeft = () => {
@@ -19,8 +22,11 @@ export default function cardBox() {
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
     }
   }
+  const changeHandler = () => {
+    navigate('/CoursePage')
+  }
   return (
-    <Box sx={{ position: 'relative', width: '100%', padding: 2 }}>
+    <Box onClick = {changeHandler} sx={{ position: 'relative', width: '100%', padding: 2 }}>
       <Typography variant='h6' mb={4} sx={{ color: 'text.secondary' }}>
         {translate.cardBox.courses}
       </Typography>
