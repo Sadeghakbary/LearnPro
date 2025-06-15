@@ -1,13 +1,13 @@
 import { translate } from '@/localization'
 import { Box, Typography, Card, CardContent } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import {useAppSelector} from '@/redux/store'
+import { useAppSelector } from '@/redux/store'
 import { selectTheme } from '@/redux/slices/themeSlice'
 
 export default function RoadMap() {
   const theme = useTheme()
   const steps = translate.roadMap.steps
-  const {mode} = useAppSelector(selectTheme)
+  const { mode } = useAppSelector(selectTheme)
 
   const lightColors = [
     '#E3F2FD',
@@ -35,47 +35,48 @@ export default function RoadMap() {
   const colors = isLight ? lightColors : darkColors
 
   return (
-    <Box sx={{ px: 2 }}>
-      <Typography variant='h6' sx={{ mb: 2 }} color='secondary'>
-        {translate.roadMap.title}
-      </Typography>
+    <>
+      <Typography sx={{display : 'grid' , p : 5 ,fontVariant : 'full-width'}}>{translate.roadMap.title}</Typography>
       <Box
         sx={{
-          display: 'flex',
-          overflowX: 'auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
           gap: 2,
-          pb: 4,
-          '&::-webkit-scrollbar': { display: 'none' },
+          justifyItems: 'center',
+          alignItems: 'center',
+          p: 2,
         }}
       >
-        {steps.map((step, index) => {
+        {steps.slice(0, 4).map((step, index) => {
           const bgColor = colors[index % colors.length]
           const textColor = theme.palette.getContrastText(bgColor)
 
           return (
             <Card
-              key={step.id || index}
+              key={index}
               sx={{
-                minWidth: 200,
-                flexShrink: 0,
+                width: 300,
+                height: 130,
                 bgcolor: bgColor,
-                borderLeft: `5px solid ${bgColor}`,
-                boxShadow: 3,
                 color: textColor,
+                display: 'grid',
+                justifyContent: 'center',
+                alignItems: 'center',
+                boxShadow: 55,
                 transition: 'transform 0.3s',
                 '&:hover': { transform: 'scale(1.05)' },
               }}
             >
-              <CardContent>
-                <Typography variant='subtitle1' fontWeight='bold'>
+              <CardContent sx={{ p: 1 }}>
+                <Typography variant='subtitle2' fontWeight='bold' fontSize={14}>
                   {step.title}
                 </Typography>
-                <Typography variant='body2'>{step.description}</Typography>
+                <Typography variant='caption'>{step.description}</Typography>
               </CardContent>
             </Card>
           )
         })}
       </Box>
-    </Box>
+    </>
   )
 }
