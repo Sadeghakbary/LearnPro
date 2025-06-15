@@ -6,7 +6,7 @@ export const getCourses = async (): Promise<Course[]> => {
   return res.data
 }
 
-export const getCourseBySlug = async (slug: string): Promise<Course | undefined> => {
-  const res = await axios.get('/mock/courses.json')
-  return res.data.find((course: Course) => course.slug === slug)
+export const getCourseBySlug = async (slug: string): Promise<Course> => {
+  const res = await axios.get(`/courses?slug=${slug}`)
+  return res.data[0] 
 }
