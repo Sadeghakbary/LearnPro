@@ -7,8 +7,12 @@ import { selectTheme } from '@/redux/slices/themeSlice'
 export default function RoadMap() {
   const theme = useTheme()
   const steps = translate.roadMap.steps
+<<<<<<< HEAD
   const { mode } = useAppSelector(selectTheme)
 
+=======
+  const {mode} = useAppSelector(selectTheme)
+>>>>>>> 6220d641bcadcce85adc31c701026ceac83a7468
   const lightColors = [
     '#E3F2FD',
     '#FFECB3',
@@ -19,7 +23,6 @@ export default function RoadMap() {
     '#B2EBF2',
     '#FFCDD2',
   ]
-
   const darkColors = [
     '#0D1B2A',
     '#1B263B',
@@ -30,10 +33,8 @@ export default function RoadMap() {
     '#A5B3C3',
     '#2F3E52',
   ]
-
   const isLight = mode === 'light'
   const colors = isLight ? lightColors : darkColors
-
   return (
     <>
       <Typography sx={{display : 'grid' , p : 5 ,fontVariant : 'full-width'}}>{translate.roadMap.title}</Typography>

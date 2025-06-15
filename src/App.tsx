@@ -3,18 +3,18 @@ import { CssBaseline } from "@mui/material";
 import { RTLComponent } from "./theme";
 import MainRoutes from "./routes/mainRoutes";
 import { useAppSelector } from "./redux/store";
-import { lightTheme } from "./theme";
-import { darkTheme } from "./theme";
+import { selectTheme } from "./redux/slices/themeSlice"; 
+import { lightTheme, darkTheme } from "./theme";
 import ResponsiveAppBar from "./pages/navbar/ResponsiveAppBar";
 
 export default function App() {
-  const themeMode = useAppSelector((state) => state.theme.mode);
+  const { mode } = useAppSelector(selectTheme); 
 
   return (
     <RTLComponent>
-      <ThemeProvider theme={themeMode === "light" ? lightTheme : darkTheme}>
+      <ThemeProvider theme={mode === "light" ? lightTheme : darkTheme}>
         <CssBaseline />
-        <ResponsiveAppBar/>
+        <ResponsiveAppBar />
         <MainRoutes />
       </ThemeProvider>
     </RTLComponent>
