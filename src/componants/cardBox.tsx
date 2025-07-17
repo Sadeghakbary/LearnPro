@@ -1,5 +1,4 @@
 import { translate } from '@/localization'
-import CoursePage from '@/pages/coursePage'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
@@ -23,7 +22,7 @@ export default function CardBox() {
     }
   }
   const changeHandler = () => {
-    navigate('/CoursePage')
+    navigate('/courses/:slug')
   }
   return (
     <Box onClick = {changeHandler} sx={{ position: 'relative', width: '100%', padding: 2 }}>
@@ -40,7 +39,7 @@ export default function CardBox() {
           zIndex: 10,
         }}
         aria-label='Scroll Left'
-      >
+        >
         <ChevronLeftIcon />
       </IconButton>
       <IconButton
@@ -69,18 +68,18 @@ export default function CardBox() {
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
           }}
-        >
+          >
           {cardData.map((card) => (
             <Card
-              key={card.id}
-              sx={{
-                maxWidth: 350,
-                minHeight: 300,
-                flexShrink: 0,
-                boxShadow: 3,
-                borderRadius: 2,
-                cursor: 'pointer',
-                '&:hover': { transform: 'scale(1.05)', boxShadow: 20, transition: 'all 0.3s ease' },
+            key={card.id}
+            sx={{
+              maxWidth: 350,
+              minHeight: 300,
+              flexShrink: 0,
+              boxShadow: 3,
+              borderRadius: 2,
+              cursor: 'pointer',
+              '&:hover': { transform: 'scale(1.05)', boxShadow: 20, transition: 'all 0.3s ease' },
               }}
             >
               <Box sx={{ borderBottomLeftRadius:10, borderBottomRightRadius:10, overflow: 'hidden' }}>

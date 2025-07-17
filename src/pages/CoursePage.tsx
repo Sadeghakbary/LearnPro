@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import  {getCourseBySlug}  from '@/services/courseService';
+import { getCourseBySlug } from '@/services/courseService';
 import { Course } from '@/types/course';
 import { Box, Typography, CircularProgress, Card, CardContent, Button } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
@@ -13,7 +13,8 @@ export default function CourseDetailPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log('Slug:', slug);
+    console.log('Slug received:', slug);
+    console.log('Current path:', window.location.pathname);
     setLoading(true);
     getCourseBySlug(slug || 'react-course')
       .then((res) => {
@@ -22,7 +23,7 @@ export default function CourseDetailPage() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error('Error:', err);
+        console.error('Fetch Error:', err);
         setError(err.message);
         setLoading(false);
       });
