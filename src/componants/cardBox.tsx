@@ -22,7 +22,7 @@ export default function CardBox() {
     }
   }
   const changeHandler = () => {
-    navigate('/courses/:slug')
+    navigate('/courses/react-course')
   }
   return (
     <Box onClick = {changeHandler} sx={{ position: 'relative', width: '100%', padding: 2 }}>

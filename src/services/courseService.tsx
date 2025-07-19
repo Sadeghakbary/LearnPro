@@ -5,7 +5,7 @@ import axios from 'axios'
 export const getCourseBySlug = async (slug: string): Promise<Course> => {
   try {
     console.log('Fetching course with slug:', slug)
-    const response = await axios.get(`https://api/courses?slug=${slug}`);
+    const response = await axios.get(`/api/courses?slug=${slug}`);
     console.log('API Response:', response.data)
 
     if (response.data && response.data.length > 0) {
