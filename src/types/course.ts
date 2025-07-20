@@ -19,3 +19,7 @@ export interface Lesson {
   videoUrl: string;
   
 }
+
+export interface error {
+  error : string
+}
