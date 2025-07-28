@@ -11,7 +11,7 @@ const ChangeTheme = () => {
   const mode = useSelector((state: RootState) => state.theme.mode)
 
   return (
-    <IconButton onClick={() => dispatch(changeTheme())} color="inherit">
+    <IconButton onClick={() => dispatch(changeTheme())} color="secondary">
       {mode === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
     </IconButton>
   )
