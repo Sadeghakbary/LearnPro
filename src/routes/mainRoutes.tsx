@@ -7,7 +7,7 @@ export default function MainRoutes() {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
-      <Route path="/courses" element={<CoursePage />} />
+      <Route path="/courses/:slug" element={<CoursePage />} />
       <Route path="/settings" element={<SettingsPage />} />
     </Routes>
   );

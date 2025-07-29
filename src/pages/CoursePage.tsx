@@ -7,16 +7,15 @@ import LockIcon from '@mui/icons-material/Lock';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 export default function CourseDetailPage() {
-  const { slug } = useParams<{ slug: string }>();
+  const params = useParams();
   const [course, setCourse] = useState<Course | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log('Slug received:', slug);
-    console.log('Current path:', window.location.pathname);
+   if (params.slug) {
     setLoading(true);
-    getCourseBySlug(slug || 'react-course')
+    getCourseBySlug(params.slug || 'react-course')
       .then((res) => {
         console.log('Course Data:', res);
         setCourse(res);
@@ -27,7 +26,9 @@ export default function CourseDetailPage() {
         setError(err.message);
         setLoading(false);
       });
-  }, [slug]);
+   }
+
+  }, [params.slug]);
 
   if (loading) return (
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
@@ -54,7 +55,7 @@ export default function CourseDetailPage() {
         مدرس: {course.teacher}
       </Typography>
 
-      {course.lessons.map((lesson) => (
+      {course?.lessons?.map((lesson) => (
         <Card key={lesson.id} sx={{ mb: 3, borderRadius: 2, boxShadow: 3 }}>
           <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             <Box flex={1}>

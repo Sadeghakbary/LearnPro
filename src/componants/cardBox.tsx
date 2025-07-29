@@ -23,8 +23,8 @@ export default function CardBox() {
     }
   };
 
-  const changeHandler = () => {
-    navigate('/courses');
+  const changeHandler = (value: number) => {
+    navigate(`/courses/${value}`);
   };
 
   return (
@@ -42,7 +42,7 @@ export default function CardBox() {
           backgroundColor: 'background.paper',
           boxShadow: 1,
           '&:hover': { backgroundColor: 'grey.200' },
-mt : 10
+          mt: 10
         }}
         aria-label="Scroll Left"
       >
@@ -58,7 +58,7 @@ mt : 10
           backgroundColor: 'background.paper',
           boxShadow: 1,
           '&:hover': { backgroundColor: 'grey.200' },
-          mt : 10
+          mt: 10
         }}
         aria-label="Scroll Right"
       >
@@ -82,7 +82,7 @@ mt : 10
           {cardData.map((card) => (
             <Card
               key={card.id}
-              onClick={changeHandler}
+              onClick={() => changeHandler(card.id)}
               sx={{
                 maxWidth: 350,
                 minHeight: 300,
@@ -91,7 +91,7 @@ mt : 10
                 borderRadius: 2,
                 cursor: 'pointer',
                 '&:hover': { transform: 'scale(1.05)', boxShadow: 20, transition: 'all 0.3s ease' },
-                mt :5
+                mt: 5
               }}
             >
               <Box sx={{ borderBottomLeftRadius: 10, borderBottomRightRadius: 10, overflow: 'hidden' }}>
