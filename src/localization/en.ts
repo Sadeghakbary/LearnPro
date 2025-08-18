@@ -13,6 +13,7 @@ const en = {
       { title: 'Settings', path: '/settings' },
       { title: 'Profile', path: '/profile' },
     ],
+    toggleTheme : 'changeLangage'
   },
 
   cardBox: {
@@ -119,6 +120,23 @@ const en = {
   },
   Language: {
     changeLanguage: 'change Language',
+  },
+
+  footer: {
+    detailsFoot: 'Learn in a great metods with specefic teaching',
+    courses: 'Courses',
+    names: {
+      Frontend: 'Frontend',
+      Backend: 'Backend',
+      Seo: 'Seo'
+    } ,
+    Connectiondetails : {
+      Pages : 'pages' ,
+      aboutUs : ' aboutus' ,
+      connectwithus:' connect with us ' ,
+      Question : ' Question '
+    } ,
+    SocailPage: 'follow us'
   },
 }
 

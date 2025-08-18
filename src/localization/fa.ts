@@ -13,6 +13,8 @@ const fa = {
       { title: 'تنظیمات', path: '/settings' },
       { title: 'پروفایل', path: '/profile' },
     ],
+     toggleTheme : 'تغیر زبان' ,
+     tooltip : ' بازکردن تنظیمات'
   },
   cardBox: {
     courses: 'دوره‌ها',
@@ -116,6 +118,22 @@ const fa = {
   },
   language: {
     changeLanguage: ' تغییر زبان',
+  },
+  footer: {
+    detailsFoot: 'یادگیری برنامه‌نویسی به سبک نوین، با آموزش‌های تخصصی و پروژه‌محور',
+    courses: ' آموزش',
+    names: {
+      Frontend: 'فرانت اند ',
+      Backend: ' بک اند ',
+      Seo: ' سِئو '
+    },
+    Connectiondetails: {
+      Pages: 'صفحات',
+      aboutUs: ' درباره ما',
+      connectwithus: ' تماس با ما ',
+      Question: ' سوالات متداول '
+    },
+    SocailPage: 'follow us'
   },
 }
 

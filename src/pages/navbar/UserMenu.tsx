@@ -1,3 +1,4 @@
+import { translate } from '@/localization';
 import { Avatar, IconButton, Menu, MenuItem, Tooltip } from '@mui/material';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +17,7 @@ export default function UserMenu({
 }: Props) {
   return (
     <>
-      <Tooltip title='Open settings'>
+      <Tooltip title= {translate.navbar.tooltip}>
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
           <Avatar alt='User' src='/static/images/avatar/2.jpg' />
         </IconButton>

@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material'
 import logo from '@/assets/images/logo/learnPro.jpg.jpg'
 import { translate } from '@/localization'
 
-export default function Logo() {
+export default function d() {
   return (
     <>
       
