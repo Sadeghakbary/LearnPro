@@ -13,7 +13,8 @@ const en = {
       { title: 'Settings', path: '/settings' },
       { title: 'Profile', path: '/profile' },
     ],
-    toggleTheme : 'changeLangage'
+    toggleTheme : 'changeLangage' ,
+    tooltip : 'open settings'
   },
 
   cardBox: {

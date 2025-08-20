@@ -1,9 +1,9 @@
 const lightPalette = {
   primary: {
-    light: '#1458ae',
-    main: '#004BA7',
-    hover: '#1458ae',
-    dark: '#1458ae',
+    light: '#2268c4ff',
+    main: '#2b7de0ff',
+    hover: '#5f9cecff',
+    dark: '#5988c5ff',
     contrastText: '#FFFFFF',
     shadow: '#e5e7e9',
   },

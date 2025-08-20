@@ -133,7 +133,7 @@ const fa = {
       connectwithus: ' تماس با ما ',
       Question: ' سوالات متداول '
     },
-    SocailPage: 'follow us'
+    SocailPage: ' مارا دنبال کنید '
   },
 }
 

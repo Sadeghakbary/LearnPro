@@ -22,11 +22,19 @@ export default function Footer() {
             <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
               {translate.footer.courses}
             </Typography>
-            {Object.values(translate.footer.names).map((name, index) => (
+            {Object.entries(translate.footer.names).map(([key, name]) => (
               <Typography
-                key={index}
+                key={key}
+                component="a"
+                href={`/courses/${key.toLowerCase()}`} // لینک فرضی برای هر دوره
                 variant="body2"
-                sx={{ cursor: "pointer", "&:hover": { color: "#60a5fa" } }}
+                sx={{
+                  display: "block",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  color: "inherit",
+                  "&:hover": { color: "#60a5fa" },
+                }}
               >
                 {name}
               </Typography>
@@ -35,40 +43,86 @@ export default function Footer() {
 
           {/* صفحات */}
           <Grid item xs={6} md={2}>
-            {Object.values(translate.footer.Connectiondetails).map(
-              (page, index) => (
-                <Typography
-                  key={index}
-                  variant="body2"
-                  sx={{ cursor: "pointer", "&:hover": { color: "#60a5fa" } }}
-                >
-                  {page}
-                </Typography>
-              )
-            )}
+            <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
+              صفحات
+            </Typography>
+            {[
+              { label: "درباره ما", href: "/about" },
+              { label: "تماس با ما", href: "/contact" },
+              { label: "سوالات متداول", href: "/faq" },
+            ].map((page, index) => (
+              <Typography
+                key={index}
+                component="a"
+                href={page.href}
+                variant="body2"
+                sx={{
+                  display: "block",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  color: "inherit",
+                  "&:hover": { color: "#60a5fa" },
+                }}
+              >
+                {page.label}
+              </Typography>
+            ))}
           </Grid>
 
           {/* شبکه‌های اجتماعی */}
           <Grid item xs={12} md={4}>
-            <Typography variant="h2" fontWeight="bold" gutterBottom>
-              {translate.footer.SocailPage}
+            <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
+              ما را دنبال کنید
             </Typography>
             <Box>
-              <IconButton color="inherit">
+              <IconButton
+                component="a"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+              >
                 <Instagram />
               </IconButton>
-              <IconButton color="inherit">
+              <IconButton
+                component="a"
+                href="https://t.me"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+              >
                 <Telegram />
               </IconButton>
-              <IconButton color="inherit">
+              <IconButton
+                component="a"
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+              >
                 <YouTube />
               </IconButton>
-              <IconButton color="inherit">
+              <IconButton
+                component="a"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+              >
                 <Facebook />
               </IconButton>
             </Box>
           </Grid>
         </Grid>
+
+        {/* کپی‌رایت */}
+        <Typography
+          variant="body2"
+          align="center"
+          sx={{ mt: 4, opacity: 0.7 }}
+        >
+          © {new Date().getFullYear()} Learn Pro - تمامی حقوق محفوظ است.
+        </Typography>
       </Container>
     </Box>
   );

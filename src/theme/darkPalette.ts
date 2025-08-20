@@ -1,8 +1,8 @@
 const darkPalette = {
   primary: {
-    light: '#4a90e2',
-    main: '#1976D2',
-    hover: '#4791db',
+    light: '#003068ff',
+    main: '#074788ff',
+    hover: '#05478aff',
     dark: '#115293',
     contrastText: '#FFFFFF',
     shadow: '#1a1a1a',
@@ -32,6 +32,10 @@ const darkPalette = {
   background: {
     default: '#121212',
     paper: '#1e1e1e',
+  },
+  backgroundFooter: {
+    default: '#2b27ffff',
+    paper: '#2e4ae9ff',
   },
 }
 
