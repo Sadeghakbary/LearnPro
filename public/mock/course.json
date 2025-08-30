@@ -1,7 +1,6 @@
 [
   {
-    "id": 1,
-    "slug": "react-course",
+    "slug": 1,
     "title": "آموزش جامع React",
     "teacher": "سجاد احمدی",
     "lessons": [
@@ -22,8 +21,7 @@
     ]
   },
   {
-    "id": 2,
-    "slug": "typescript-course",
+    "slug": 2,
     "title": "آموزش TypeScript",
     "teacher": "محمد محمدی",
     "lessons": [

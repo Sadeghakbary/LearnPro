@@ -7,44 +7,54 @@ import LockIcon from '@mui/icons-material/Lock';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 export default function CourseDetailPage() {
-  const params = useParams();
+  const { slug } = useParams(); 
   const [course, setCourse] = useState<Course | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-   if (params.slug) {
+    if (!slug) {
+      setError("شناسه‌ی دوره نامعتبر است");
+      setLoading(false);
+      return;
+    }
     setLoading(true);
-    getCourseBySlug(params.slug || 'react-course')
+    getCourseBySlug(slug)
       .then((res) => {
-        console.log('Course Data:', res);
         setCourse(res);
-        setLoading(false);
+        setError(null);
       })
       .catch((err) => {
-        console.error('Fetch Error:', err);
-        setError(err.message);
+        setError(err.message || "خطا در بارگذاری دوره");
+      })
+      .finally(() => {
         setLoading(false);
       });
-   }
+  }, [slug]);
 
-  }, [params.slug]);
+  if (loading) {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
 
-  if (loading) return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
-      <CircularProgress />
-    </Box>
-  );
-  if (error) return (
-    <Box sx={{ p: 3, textAlign: 'center' }}>
-      <Typography variant="h6" color="error">{error}</Typography>
-    </Box>
-  );
-  if (!course) return (
-    <Box sx={{ p: 3, textAlign: 'center' }}>
-      <Typography variant="h6">دوره یافت نشد</Typography>
-    </Box>
-  );
+  if (error) {
+    return (
+      <Box sx={{ p: 3, textAlign: 'center' }}>
+        <Typography variant="h6" color="error">{error}</Typography>
+      </Box>
+    );
+  }
+
+  if (!course) {
+    return (
+      <Box sx={{ p: 3, textAlign: 'center' }}>
+        <Typography variant="h6">دوره یافت نشد</Typography>
+      </Box>
+    );
+  }
 
   return (
     <Box sx={{ maxWidth: 900, mx: 'auto', py: 4, px: 2 }}>
@@ -55,7 +65,7 @@ export default function CourseDetailPage() {
         مدرس: {course.teacher}
       </Typography>
 
-      {course?.lessons?.map((lesson) => (
+      {course.lessons?.map((lesson) => (
         <Card key={lesson.id} sx={{ mb: 3, borderRadius: 2, boxShadow: 3 }}>
           <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             <Box flex={1}>
@@ -84,6 +94,7 @@ export default function CourseDetailPage() {
               </Box>
             )}
           </CardContent>
+
           {lesson.free && (
             <Box sx={{ p: 2 }}>
               <video

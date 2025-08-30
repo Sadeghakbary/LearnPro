@@ -9,7 +9,6 @@ export default function Footer() {
     <Box sx={{ backgroundColor: "#1f2937", color: "#fff", mt: 4, py: 4 }}>
       <Container>
         <Grid container spacing={4}>
-          {/* لوگو و توضیحات */}
           <Grid item xs={12} md={4}>
             <Logo />
             <Typography variant="body2" sx={{ mt: 1 }}>
