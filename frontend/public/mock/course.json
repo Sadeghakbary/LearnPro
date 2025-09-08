@@ -1,0 +1,340 @@
+[
+  {
+    "id": 1,
+    "slug": "react-comprehensive",
+    "translations": {
+      "fa": {
+        "title": "آموزش جامع React",
+        "teacher": "سجاد احمدی",
+        "description": "آموزش کامل React از پایه تا پیشرفته با پروژه‌های عملی"
+      },
+      "en": {
+        "title": "Comprehensive React Course",
+        "teacher": "Sajad Ahmadi",
+        "description": "Complete React course from beginner to advanced with real projects"
+      }
+    },
+    "image_url": "/assets/images/cardBox/js.jpg",
+    "lessons": [
+      {
+        "id": 1,
+        "translations": {
+          "fa": {
+            "title": "معرفی دوره React",
+            "description": "مروری بر دوره React و مفاهیم پایه"
+          },
+          "en": {
+            "title": "React Course Introduction",
+            "description": "Overview of React course and basic concepts"
+          }
+        },
+        "duration": "12:45",
+        "free": true,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
+      },
+      {
+        "id": 2,
+        "translations": {
+          "fa": {
+            "title": "JSX و کامپوننت‌ها",
+            "description": "آموزش کامل JSX و ساخت کامپوننت‌های React"
+          },
+          "en": {
+            "title": "JSX and Components",
+            "description": "Complete guide to JSX and building React components"
+          }
+        },
+        "duration": "18:30",
+        "free": false,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
+      },
+      {
+        "id": 3,
+        "translations": {
+          "fa": {
+            "title": "State و Props",
+            "description": "مدیریت state و کار با props در React"
+          },
+          "en": {
+            "title": "State and Props",
+            "description": "Managing state and working with props in React"
+          }
+        },
+        "duration": "22:15",
+        "free": false,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "typescript-guide",
+    "translations": {
+      "fa": {
+        "title": "آموزش TypeScript",
+        "teacher": "محمد محمدی",
+        "description": "آموزش کامل TypeScript برای توسعه‌دهندگان حرفه‌ای"
+      },
+      "en": {
+        "title": "TypeScript Guide",
+        "teacher": "Mohammad Mohammadi",
+        "description": "Complete TypeScript course for professional developers"
+      }
+    },
+    "image_url": "/assets/images/cardBox/js.jpg",
+    "lessons": [
+      {
+        "id": 1,
+        "translations": {
+          "fa": {
+            "title": "شروع کار با TypeScript",
+            "description": "نصب و راه‌اندازی TypeScript"
+          },
+          "en": {
+            "title": "Getting Started with TypeScript",
+            "description": "Installing and setting up TypeScript"
+          }
+        },
+        "duration": "08:12",
+        "free": true,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_1mb.mp4"
+      },
+      {
+        "id": 2,
+        "translations": {
+          "fa": {
+            "title": "انواع داده‌ای پایه",
+            "description": "آموزش انواع داده‌ای در TypeScript"
+          },
+          "en": {
+            "title": "Basic Data Types",
+            "description": "Learning data types in TypeScript"
+          }
+        },
+        "duration": "12:30",
+        "free": true,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_2mb.mp4"
+      },
+      {
+        "id": 3,
+        "translations": {
+          "fa": {
+            "title": "Interface و Generic",
+            "description": "کار با Interface و Generic Types"
+          },
+          "en": {
+            "title": "Interface and Generics",
+            "description": "Working with Interface and Generic Types"
+          }
+        },
+        "duration": "18:45",
+        "free": false,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_5mb.mp4"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "javascript-fundamentals",
+    "translations": {
+      "fa": {
+        "title": "آموزش جاوااسکریپت",
+        "teacher": "علی رضایی",
+        "description": "آموزش جامع جاوااسکریپت از پایه تا پیشرفته"
+      },
+      "en": {
+        "title": "JavaScript Fundamentals",
+        "teacher": "Ali Rezaei",
+        "description": "Complete JavaScript course from basics to advanced"
+      }
+    },
+    "image_url": "/assets/images/cardBox/js.jpg",
+    "lessons": [
+      {
+        "id": 1,
+        "translations": {
+          "fa": {
+            "title": "متغیرها و انواع داده",
+            "description": "آموزش کامل متغیرها و انواع داده در JavaScript"
+          },
+          "en": {
+            "title": "Variables and Data Types",
+            "description": "Complete guide to variables and data types in JavaScript"
+          }
+        },
+        "duration": "14:20",
+        "free": true,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_854x480_1mb.mp4"
+      },
+      {
+        "id": 2,
+        "translations": {
+          "fa": {
+            "title": "توابع و Scope",
+            "description": "آموزش توابع، پارامترها و مفهوم Scope"
+          },
+          "en": {
+            "title": "Functions and Scope",
+            "description": "Learning functions, parameters and scope concept"
+          }
+        },
+        "duration": "16:30",
+        "free": false,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_854x480_2mb.mp4"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "python-programming",
+    "translations": {
+      "fa": {
+        "title": "آموزش پایتون",
+        "teacher": "مریم احمدی",
+        "description": "آموزش برنامه‌نویسی پایتون برای همه سطوح"
+      },
+      "en": {
+        "title": "Python Programming",
+        "teacher": "Maryam Ahmadi",
+        "description": "Python programming course for all levels"
+      }
+    },
+    "image_url": "/assets/images/cardBox/Python.jpg",
+    "lessons": [
+      {
+        "id": 1,
+        "translations": {
+          "fa": {
+            "title": "شروع برنامه‌نویسی پایتون",
+            "description": "نصب Python و اجرای اولین برنامه"
+          },
+          "en": {
+            "title": "Python Programming Basics",
+            "description": "Installing Python and running first program"
+          }
+        },
+        "duration": "11:15",
+        "free": true,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_720x480_1mb.mp4"
+      },
+      {
+        "id": 2,
+        "translations": {
+          "fa": {
+            "title": "متغیرها و عملیات",
+            "description": "کار با متغیرها و عملیات ریاضی در پایتون"
+          },
+          "en": {
+            "title": "Variables and Operations",
+            "description": "Working with variables and mathematical operations in Python"
+          }
+        },
+        "duration": "19:40",
+        "free": false,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_720x480_2mb.mp4"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "html-css-basics",
+    "translations": {
+      "fa": {
+        "title": "آموزش HTML و CSS",
+        "teacher": "رضا کریمی",
+        "description": "آموزش طراحی وب با HTML و CSS"
+      },
+      "en": {
+        "title": "HTML & CSS Basics",
+        "teacher": "Reza Karimi",
+        "description": "Web design course with HTML and CSS"
+      }
+    },
+    "image_url": "/assets/images/cardBox/HTML.jpg",
+    "lessons": [
+      {
+        "id": 1,
+        "translations": {
+          "fa": {
+            "title": "ساختار پایه HTML",
+            "description": "یادگیری تگ‌های پایه و ساختار صفحات وب"
+          },
+          "en": {
+            "title": "Basic HTML Structure",
+            "description": "Learning basic tags and web page structure"
+          }
+        },
+        "duration": "13:25",
+        "free": true,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_1mb.mp4"
+      },
+      {
+        "id": 2,
+        "translations": {
+          "fa": {
+            "title": "CSS و طراحی وب",
+            "description": "آموزش CSS برای استایل‌دهی صفحات وب"
+          },
+          "en": {
+            "title": "CSS and Web Design",
+            "description": "Learning CSS for styling web pages"
+          }
+        },
+        "duration": "17:50",
+        "free": false,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_2mb.mp4"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "tailwind-css",
+    "translations": {
+      "fa": {
+        "title": "آموزش Tailwind CSS",
+        "teacher": "فاطمه حسینی",
+        "description": "طراحی سریع و مدرن با Tailwind CSS"
+      },
+      "en": {
+        "title": "Tailwind CSS Course",
+        "teacher": "Fateme Hosseini",
+        "description": "Fast and modern design with Tailwind CSS"
+      }
+    },
+    "image_url": "/assets/images/cardBox/tailwind.jpg",
+    "lessons": [
+      {
+        "id": 1,
+        "translations": {
+          "fa": {
+            "title": "معرفی Tailwind CSS",
+            "description": "نصب و راه‌اندازی Tailwind CSS"
+          },
+          "en": {
+            "title": "Introduction to Tailwind CSS",
+            "description": "Installing and setting up Tailwind CSS"
+          }
+        },
+        "duration": "09:30",
+        "free": true,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_854x480_1mb.mp4"
+      },
+      {
+        "id": 2,
+        "translations": {
+          "fa": {
+            "title": "کلاس‌های کاربردی",
+            "description": "آموزش کلاس‌های کاربردی Tailwind"
+          },
+          "en": {
+            "title": "Utility Classes",
+            "description": "Learning Tailwind utility classes"
+          }
+        },
+        "duration": "21:15",
+        "free": false,
+        "videoUrl": "https://sample-videos.com/zip/10/mp4/SampleVideo_854x480_2mb.mp4"
+      }
+    ]
+  }
+]
