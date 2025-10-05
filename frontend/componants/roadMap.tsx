@@ -13,24 +13,24 @@ interface RoadMapStep {
 
 const getColorByIndex = (index: number, isLight: boolean): string => {
   const lightColors = [
-    '#E3F2FD',
-    '#FFECB3',
-    '#C8E6C9',
-    '#F8BBD0',
-    '#D1C4E9',
-    '#FFF9C4',
-    '#B2EBF2',
-    '#FFCDD2',
+    '#E3F2FD', // Light blue
+    '#BBDEFB', // Lighter blue
+    '#90CAF9', // Light blue medium
+    '#64B5F6', // Blue
+    '#42A5F5', // Medium blue
+    '#2196F3', // Darker blue
+    '#E1F5FE', // Very light cyan
+    '#F8F9FF', // White with blue tint
   ];
   const darkColors = [
-    '#0D1B2A',
-    '#1B263B',
-    '#415A77',
-    '#778DA9',
-    '#E0E1DD',
-    '#FFFFFF',
-    '#A5B3C3',
-    '#2F3E52',
+    '#0d1b2a', // Dark blue
+    '#1b263b', // Dark blue-gray
+    '#415a77', // Medium blue-gray
+    '#778da9', // Light blue-gray
+    '#c9daea', // Very light blue
+    '#e0e1dd', // Light gray
+    '#a5b3c3', // Medium gray-blue
+    '#2f3e52', // Dark gray-blue
   ];
   const colors = isLight ? lightColors : darkColors;
   return colors[index % colors.length];

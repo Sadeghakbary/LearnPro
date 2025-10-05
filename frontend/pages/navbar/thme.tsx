@@ -11,11 +11,11 @@ const ChangeTheme = () => {
   const mode = useSelector((state: RootState) => state.theme.mode)
 
   return (
-    <IconButton onClick={() => dispatch(changeTheme())}>
+    <IconButton onClick={() => dispatch(changeTheme())} sx={{ color: 'text.primary' }}>
       {mode === 'light' ? (
-        <DarkModeIcon sx={{ color: '#757575' }} />
+        <DarkModeIcon />
       ) : (
-        <LightModeIcon sx={{ color: '#FFD700' }} />
+        <LightModeIcon />
       )}
     </IconButton>
   )

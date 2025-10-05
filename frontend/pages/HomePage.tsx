@@ -1,9 +1,10 @@
 import backImage from '@/assets/images/background/Grey Laptop Promo Poster.png'
-import { translate, lang } from '@/localization'
+import { lang, translate } from '@/localization'
 import SearchIcon from '@mui/icons-material/Search'
-import { Box, InputAdornment, TextField, Typography, Button, Paper, Fade } from '@mui/material'
-import { useState, useEffect } from 'react'
+import { Box, Button, Fade, InputAdornment, Paper, TextField, Typography } from '@mui/material'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import ResponsiveAppBar from './navbar/ResponsiveAppBar'
 
 export default function HomePage() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -39,6 +40,10 @@ export default function HomePage() {
         px: 2,
       }}
     >
+      {/* Navbar positioned over the background image */}
+      <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10 }}>
+        <ResponsiveAppBar />
+      </Box>
 
       <Fade in={isVisible} timeout={1000}>
         <Box

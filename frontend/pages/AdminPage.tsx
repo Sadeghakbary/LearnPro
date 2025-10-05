@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppSelector } from '@/redux/store'
 import { userInfo } from '@/redux/slices/userSlice'
@@ -82,9 +82,9 @@ export default function AdminPage() {
 
     fetchUsers()
     fetchStats()
-  }, [user, navigate])
+  }, [user, navigate, fetchUsers, fetchStats])
 
-  const fetchUsers = async () => {
+  const fetchUsers = useCallback(async () => {
     try {
       const response = await fetch('/api/admin/users', {
         headers: {
@@ -102,9 +102,9 @@ export default function AdminPage() {
       setError(isPersian ? 'خطا در بارگذاری کاربران' : 'Error loading users')
       console.error('Fetch users error:', err)
     }
-  }
+  }, [user.token, isPersian])
 
-  const fetchStats = async () => {
+  const fetchStats = useCallback(async () => {
     try {
       const response = await fetch('/api/admin/stats', {
         headers: {
@@ -123,7 +123,7 @@ export default function AdminPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [user.token])
 
   const handleRoleChange = async () => {
     if (!selectedUser) return

@@ -10,9 +10,8 @@ export default defineConfig({
     port: 3085,
     proxy: {
       '/api': {
-        target: 'https://6875d86b814c0dfa65399a47.mockapi.io',
+        target: 'http://localhost:5000',
         changeOrigin: true,
-        rewrite: (url) => url.replace(/^\/api/, ''),
       },
     },
   },

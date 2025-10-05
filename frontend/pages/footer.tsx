@@ -17,7 +17,7 @@ export default function Footer() {
             </Typography>
           </Grid>
 
-          {/* دوره‌ها */}
+
           <Grid item xs={6} md={2}>
             <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
               {translate.footer.courses}
@@ -33,7 +33,7 @@ export default function Footer() {
                   cursor: "pointer",
                   textDecoration: "none",
                   color: "inherit",
-                  "&:hover": { color: "#60a5fa" },
+                  "&:hover": { color: "#eeeeeeff" },
                 }}
               >
                 {name}
@@ -41,7 +41,6 @@ export default function Footer() {
             ))}
           </Grid>
 
-          {/* صفحات */}
           <Grid item xs={6} md={2}>
             <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
               {translate.footer.Connectiondetails.Pages}
@@ -61,7 +60,7 @@ export default function Footer() {
                   cursor: "pointer",
                   textDecoration: "none",
                   color: "inherit",
-                  "&:hover": { color: "#60a5fa" },
+                  "&:hover": { color: "#f4f8fdff" },
                 }}
               >
                 {page.label}
@@ -69,7 +68,6 @@ export default function Footer() {
             ))}
           </Grid>
 
-          {/* شبکه‌های اجتماعی */}
           <Grid item xs={12} md={4}>
             <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
               {translate.footer.SocailPage}
@@ -115,7 +113,6 @@ export default function Footer() {
           </Grid>
         </Grid>
 
-        {/* کپی‌رایت */}
         <Typography
           variant="body2"
           align="center"

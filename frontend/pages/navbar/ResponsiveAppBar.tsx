@@ -1,7 +1,7 @@
 import { translate } from '@/localization'
 import { AppBar, Container, Toolbar, Button } from '@mui/material'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useAppSelector } from '@/redux/store'
 import { userInfo } from '@/redux/slices/userSlice'
 import DesktopMenu from './DesktopMenu'
@@ -14,6 +14,7 @@ import { Login as LoginIcon } from '@mui/icons-material'
 
 export default function ResponsiveAppBar() {
   const navigate = useNavigate()
+  const location = useLocation()
   const user = useAppSelector(userInfo)
   const isAuthenticated = !!user.token
 
@@ -22,6 +23,8 @@ export default function ResponsiveAppBar() {
 
   const pages = translate.navbar.Pages
   const settings = translate.navbar.settings
+
+  const isHomePage = location.pathname === '/'
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget)
@@ -35,7 +38,28 @@ export default function ResponsiveAppBar() {
   const handleCloseUserMenu = () => setAnchorElUser(null)
 
   return (
-    <AppBar position='static'>
+    <AppBar
+      position="static"
+      sx={{
+        ...(isHomePage ? {
+          background: 'rgba(0, 0, 0, 0.3)',
+          backdropFilter: 'blur(10px)',
+          boxShadow: 'none',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+          color: 'white',
+          '& .MuiButton-root': {
+            color: 'white',
+          },
+          '& .MuiIconButton-root': {
+            color: 'white',
+          },
+        } : {
+          backgroundColor: 'background.paper',
+          color: 'text.primary',
+          boxShadow: 1,
+        })
+      }}
+    >
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <MobileMenu

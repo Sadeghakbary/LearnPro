@@ -158,51 +158,31 @@ const getCourseData = () => {
 
 // Get all courses
 export const getAllCourses = async (): Promise<Course[]> => {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/courses`)
-    return response.data
-  } catch (error: any) {
-    if (axios.isAxiosError(error)) {
-      console.error('Backend not available, using bilingual mock data')
-      if (error.code === 'ERR_NETWORK' || error.code === 'ECONNREFUSED' || error.response?.status === 404) {
-        return getCourseData()
-      }
-    }
-    console.error('Error fetching courses:', error)
-    throw new Error('Failed to fetch courses')
-  }
+  // For development: Use mock data directly to avoid backend dependency
+  console.log('📚 Loading courses from mock data...')
+  return getCourseData()
 }
 
 // Get course by slug
 export const getCourseBySlug = async (slug: string): Promise<Course> => {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/courses/slug/${slug}`)
-    return response.data
-  } catch (error: unknown) {
-    if (axios.isAxiosError(error)) {
-      if (error.code === 'ERR_NETWORK' || error.code === 'ECONNREFUSED' || error.response?.status === 404) {
-        const courses = getCourseData()
-        const course = courses.find(c => c.slug === slug)
-        if (course) {
-          return course
-        }
-        throw new Error(`Course with slug "${slug}" not found`)
-      }
-    }
-    console.error('Error fetching course by slug:', error)
-    throw new Error('Failed to fetch course')
+  console.log(`🔍 Looking for course with slug: ${slug}`)
+  const courses = getCourseData()
+  const course = courses.find(c => c.slug === slug)
+  if (course) {
+    return course
   }
+  throw new Error(`Course with slug "${slug}" not found`)
 }
 
 // Get course by ID
 export const getCourseById = async (id: number): Promise<Course> => {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/courses/${id}`)
-    return response.data
-  } catch (error: unknown) {
-    console.error('Error fetching course by ID:', error)
-    throw new Error('Failed to fetch course')
+  console.log(`🔍 Looking for course with ID: ${id}`)
+  const courses = getCourseData()
+  const course = courses.find(c => c.id === id)
+  if (course) {
+    return course
   }
+  throw new Error(`Course with ID "${id}" not found`)
 }
 
 // Create new course

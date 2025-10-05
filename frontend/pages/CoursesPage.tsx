@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getAllCourses } from '@/services/courseService'
 import { Course } from '@/types/course'
@@ -29,11 +29,7 @@ export default function CoursesPage() {
   const navigate = useNavigate()
   const isPersian = lang === 'fa'
 
-  useEffect(() => {
-    fetchCourses()
-  }, [])
-
-  const fetchCourses = async () => {
+  const fetchCourses = useCallback(async () => {
     try {
       const courseData = await getAllCourses()
       setCourses(courseData)
@@ -43,7 +39,11 @@ export default function CoursesPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [isPersian])
+
+  useEffect(() => {
+    fetchCourses()
+  }, [fetchCourses])
 
   const handleCourseClick = (course: Course) => {
     navigate(`/courses/${course.slug}`)
